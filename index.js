@@ -8,6 +8,7 @@ function newImage(url, left, bottom){
     return image
 }
 
+let character = newImage('assets/green-character.gif')
 newImage('assets/green-character.gif', 100, 250)
 newImage('assets/tree.png', 200, 450)
 newImage('assets/pillar.png', 350, 250)
@@ -49,3 +50,16 @@ function newInventory(){
 }
 
 const inventory = newInventory()
+
+function move(image){
+    image.style.position = 'fixed'
+    
+    function moveToCoordinates(left, bottom){
+        image.style.left = left + 'px'
+        image.style.bottom = bottom + 'px'
+    }
+    return {
+        to: moveToCoordinates
+      }
+    }
+move (character).to (200,700)
